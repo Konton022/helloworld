@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ArticleController;
 
 Route::get('/', function () {
     return view('main');
@@ -17,3 +18,5 @@ Route::prefix('products')->group( function(){
     Route::put('/{id}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 }); 
+
+Route::resource('articles', ArticleController::class);
