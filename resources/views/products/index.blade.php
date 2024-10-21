@@ -3,12 +3,14 @@
 @extends('layouts.base')
 
 @section('content')
-
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('products.create') }}" class="btn btn-primary">Create</a>
+    </div>
 <div class="container mt-5">
     <div class="row">
         @foreach ($products as $product)
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <a href="/products/{{ $product['id'] }}" class="card h-100 shadow p-3 mb-5 bg-white rounded hover-shadow">
+                <a href="{{ route('products.show', $product['id']) }}" class="card h-100 shadow p-3 mb-5 bg-white rounded hover-shadow">
                         <img src="{{ $product['image'] }}" class="card-img-top" alt="{{ $product['title'] }}">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ $product['title'] }}</h5>

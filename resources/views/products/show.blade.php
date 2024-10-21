@@ -19,8 +19,8 @@
             </div>
         </div>
         <div class="mt-3 d-flex justify-content-end gap-3">
-            <a href="/products/{{ $product['id'] }}/edit" class="btn btn-primary">Edit</a>
-            <form action="/products/{{ $product['id'] }}" method="POST">
+            <a href="{{route('products.edit', $product['id'])}}" class="btn btn-primary">Edit</a>
+            <form action="{{route('products.destroy', $product['id'])}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
