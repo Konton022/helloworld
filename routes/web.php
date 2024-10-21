@@ -19,4 +19,4 @@ Route::prefix('products')->group( function(){
     Route::delete('/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 }); 
 
-Route::resource('articles', ArticleController::class);
+Route::resource('articles', ArticleController::class)->only(['index', 'show']);
